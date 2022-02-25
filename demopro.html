@@ -705,19 +705,20 @@
     deal10.src = deal9[3].src;
   };
 let arr = JSON.parse(localStorage.getItem("SingleProduct"));
+console.log(arr);
 
-  document.getElementById("image_fr").src = arr[0].image_fr;
-  document.getElementById("image_bk").src = arr[0].image_bk;
-  document.getElementById("image_le").src = arr[0].image_le;
-  document.getElementById("image_ri").src = arr[0].image_ri;
-  document.getElementById("image_fr1").src = arr[0].image_fr;
-  document.getElementById("nameT").innerText = arr[0].name;
+  document.getElementById("image_fr").src = arr[0].images_url[0];
+  document.getElementById("image_bk").src = arr[0].images_url[1];
+  document.getElementById("image_le").src = arr[0].images_url[2];
+  document.getElementById("image_ri").src = arr[0].images_url[3];
+  document.getElementById("image_fr1").src = arr[0].images_url[0];
+  document.getElementById("nameT").innerText = arr[0].title;
   document.getElementById("org").innerText = arr[0].price;
   document.getElementById("buy").innerText = arr[0].price;
  
-  document.getElementById("ram").innerText = arr[0].ram;
-  document.getElementById("display").innerText = arr[0].display;
-  document.getElementById("battery").innerText = arr[0].battery;
+  document.getElementById("ram").innerText = arr[0].description[0];
+  document.getElementById("display").innerText = arr[0].description[1];
+  document.getElementById("battery").innerText = arr[0].description[2];
 
     function addtocart(){
       

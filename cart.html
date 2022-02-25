@@ -183,7 +183,7 @@ function saveAddress(){
     if (flag1 === 1){
         console.log(allAddresses, Address);
         allAddresses.push(Address);
-        localStorage.setItem("userAddresses", JSON.stringify(allAddresses));
+        // localStorage.setItem("userAddresses", JSON.stringify(allAddresses));
         let arr = document.querySelectorAll(".pincode");
         for (let i = 0; i < arr.length; i++){
             arr[i].value = "";
@@ -206,6 +206,86 @@ function SelectAddressLogIn(){
         showAllAddresses(allAddresses, showAllAddressesDiv);
     }
 }
+
+async function addProduct() {
+		try {
+			let data = {
+				id: document.getElementById("id").value,
+				name: document.getElementById("name").value,
+				price: document.getElementById("price").value,
+			};
+			data = JSON.stringify(data);
+
+			let response = await fetch("http://127.0.0.1:3000/products", {
+				method: "POST",
+				body: data,
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
+			let d = await response.json();
+			console.log("data:", d);
+		} catch (error) {
+			console.log("error:", error);
+		}
+	}
+
+	async function deleteProduct() {
+		let id = document.getElementById("delete_id").value;
+
+		let response = await fetch(`http://127.0.0.1:3000/products/${id}`, {
+			method: "DELETE",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+
+		let d = await response.json();
+		console.log("data:", d);
+	}
+
+	async function UpdateProduct() {
+		try {
+			let data = {
+				id: document.getElementById("Update_id").value,
+				name: document.getElementById("Update_name").value,
+				price: document.getElementById("Update_price").value,
+			};
+			data = JSON.stringify(data);
+			let id = document.getElementById("Update_id").value;
+
+			let response = await fetch(`http://127.0.0.1:3000/products/${id}`, {
+				method: "PUT",
+				body: data,
+				headers: {
+					"Content-Type": "application/json",
+				},
+			});
+			let d = await response.json();
+			console.log("data:", d);
+		} catch (error) {
+			console.log("error:", error);
+		}
+	}
+
+	async function getData() {
+		try {
+			let url = "http://127.0.0.1:3000/products";
+
+			let res = await fetch(url);
+			let data = await res.json();
+			console.log("data:", data);
+			appendData(data);
+		} catch (error) {
+			console.log("error:", error);
+		}
+	}
+
+	getData();
+
+
+
+
 
 function showAllAddresses(data, location){
     data.forEach(function(ele){
