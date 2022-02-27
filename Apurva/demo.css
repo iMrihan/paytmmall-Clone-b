@@ -1,3 +1,9 @@
+body{
+  background-color: rgb(245,247,247);
+}
+.container{
+  margin-top: 100px;
+}
 .main {
   /* border: 2px solid blue; */
   /* height: 750px; */

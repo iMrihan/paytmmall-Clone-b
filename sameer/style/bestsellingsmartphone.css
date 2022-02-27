@@ -2,7 +2,9 @@
 
  
 /*------MAIN WRAPPER----------------------------------------------------------------------------------------------------*/
-
+main{
+    margin-top: 90px;
+}
 .main-wrapper{
     padding: 30px;
     background-color:  #f4f4f4 ;
@@ -38,7 +40,7 @@ hr{
     margin-bottom: 2px;
     font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif; 
     font-size: 20px;
-    color: #222222;
+    color: #235022;
     line-height: 30px;
     font-weight: 400;
 }
@@ -149,7 +151,7 @@ div > img{
     font-size: 15px;
     line-height: 18px;
     
-    color: #222222;
+    color: #235022;
 }
 .sMIName{
     text-decoration: none;

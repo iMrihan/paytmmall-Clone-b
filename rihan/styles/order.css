@@ -1,13 +1,14 @@
 /** @format */
 
 @import "./reset.css";
-@import "./header.css";
 @import "./footer.css";
 
 body {
 	background-color: #f5f7f7;
 }
-
+main{
+	margin-top: 100px;
+}
 .navbar {
 	border: 1px solid red;
 	width: 100vw;

@@ -16,20 +16,11 @@ body {
 .pointer:hover {
 	cursor: pointer;
 }
-#HeaderCartPage {
-	border: 1px transparent red;
-	position: sticky;
-	top: 0;
-	margin-top: 20px;
-	/* height: 50px; */
-	width: 100%;
-	background-color: white;
-}
 #content {
 	border: 1px transparent red;
 	width: 95.6%;
 	margin: auto;
-	margin-top: 30px;
+	margin-top: 100px;
 	display: flex;
 	justify-content: space-between;
 }

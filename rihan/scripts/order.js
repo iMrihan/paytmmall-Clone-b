@@ -85,7 +85,7 @@ function showDatas(orderArr) {
 	appendDiv.innerHTML = "";
 	empty_div.innerHTML = "";
 	if (orderArr.length !== 0) {
-		orderArr.forEach(({ image_fr, price, name, token, status }) => {
+		orderArr.forEach(({ images_url, price, title, token, status }) => {
 			let order_status = document.createElement("div");
 			order_status.setAttribute("class", "order-status");
 			let order_number = document.createElement("p");
@@ -98,13 +98,13 @@ function showDatas(orderArr) {
 			let image_div = document.createElement("div");
 			image_div.setAttribute("class", "image-div");
 			let image = document.createElement("img");
-			image.src = image_fr;
+			image.src = images_url[0];
 			image_div.append(image);
 			let details_div = document.createElement("div");
 			let order = document.createElement("h2");
 			order.innerHTML = status;
 			let product = document.createElement("p");
-			product.innerHTML = name;
+			product.innerHTML = title;
 			let prices = document.createElement("h2");
 			prices.innerHTML = price;
 			details_div.append(order, product, prices);
